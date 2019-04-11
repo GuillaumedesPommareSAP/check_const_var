@@ -1,0 +1,48 @@
+{
+    "ignore": [
+        "**/*.d.ts"
+    ],
+    "presets": [
+        [
+            "babel-preset-transform-ui5",
+            {
+                "noImportInteropPrefixes": [
+                    "sap/",
+                    "demo/"
+                ],
+                "moveControllerPropsToOnInit": true,
+                "onlyConvertNamedClass": true,
+                "addControllerStaticPropsToExtend": true
+            }
+        ],
+        [
+            "@babel/preset-env",
+            {
+                "targets": [
+                    "last 2 Chrome versions",
+                    "last 2 Firefox versions",
+                    "last 2 Edge versions",
+                    "ie >= 11"
+                ],
+                "modules": false,
+                "useBuiltIns": false,
+                "debug": true
+            }
+        ],
+        "@babel/preset-typescript"
+    ],
+    "plugins": [
+        [
+            "@babel/plugin-proposal-class-properties"
+        ],
+        [
+            "@babel/proposal-object-rest-spread"
+        ],
+        [
+            "@babel/plugin-syntax-decorators",
+            {
+                "legacy": true
+            }
+        ]
+    ]
+}
